@@ -1,7 +1,15 @@
 import Card from "@/components/Card";
-import Image from "next/image";
+import TvCard from "@/components/tvCard";
+import {
+  getPopularMovies,
+  getPopularShows,
+  getTrendingMovies,
+} from "@/utils/request";
 
-export default function Home() {
+export default async function Home() {
+  const tmovies = await getTrendingMovies();
+  const pmovies = await getPopularMovies();
+  const pshows = await getPopularShows();
   return (
     <>
       <header className=" bg-red-tone-2 text-white text-center py-16">
@@ -15,35 +23,41 @@ export default function Home() {
       </header>
 
       <section className="container mx-auto my-8">
+        <h2 className="text-3xl font-bold mb-4 text-white">Trending Movies</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+      </section>
+
+      <section class="container mx-auto my-8">
+        <div class="text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {tmovies.map((movie) => {
+            return <Card movie={movie} />;
+          })}
+        </div>
+      </section>
+
+      <section className="container mx-auto my-8">
         <h2 className="text-3xl font-bold mb-4 text-white">Top 20 Movies</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
       </section>
 
       <section class="container mx-auto my-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <Card />
+          {pmovies.map((movie) => {
+            return <Card movie={movie} />;
+          })}
         </div>
       </section>
 
       <section className="container mx-auto my-8">
-        <h2 className="text-3xl font-bold mb-4 text-white">Top 20 Series</h2>
+        <h2 className="text-3xl font-bold mb-4 text-white">Popular Shows</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
       </section>
 
       <section class="container mx-auto my-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <Card />
-        </div>
-      </section>
-
-      <section className="container mx-auto my-8">
-        <h2 className="text-3xl font-bold mb-4 text-white">Trending Movies</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
-      </section>
-
-      <section class="container mx-auto my-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <Card />
+          {pshows.map((shows) => {
+            return <TvCard shows={shows} />;
+          })}
         </div>
       </section>
     </>
