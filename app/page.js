@@ -1,5 +1,4 @@
 import Card from "@/components/Card";
-import TvCard from "@/components/tvCard";
 import {
   getPopularMovies,
   getPopularShows,
@@ -30,7 +29,7 @@ export default async function Home() {
       <section class="container mx-auto my-8">
         <div class="text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {tmovies.map((movie) => {
-            return <Card movie={movie} />;
+            return <Card key={movie.id} movie={movie} />;
           })}
         </div>
       </section>
@@ -43,7 +42,7 @@ export default async function Home() {
       <section class="container mx-auto my-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {pmovies.map((movie) => {
-            return <Card movie={movie} />;
+            return <Card key={movie.id} movie={movie} />;
           })}
         </div>
       </section>
@@ -55,9 +54,9 @@ export default async function Home() {
 
       <section class="container mx-auto my-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {pshows.map((shows) => {
-            return <TvCard shows={shows} />;
-          })}
+          {/* {pshows.map((shows) => {
+            return <TvCard key={shows.id} shows={shows} />;
+          })} */}
         </div>
       </section>
     </>

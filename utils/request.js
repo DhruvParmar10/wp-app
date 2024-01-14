@@ -44,3 +44,11 @@ export const getSimilarMovies = async (id) => {
   const data = await res.json();
   return data.results;
 };
+
+export const getPeople = async () => {
+  const res = await fetch(
+    `${BASE_URL}/person/popular?language=en_US&api_key=${API_KEY}`
+  );
+  const data = await res.json();
+  return data.results;
+};

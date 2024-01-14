@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export default function TvCard({ shows }) {
-  const IMAGE_BASE_URL = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
+export default function peopleCard({ shows }) {
+  const IMAGE_BASE_URL = "https://media.themoviedb.org/t/p/w235_and_h235_face";
   return (
     <>
-      <Link href={"/movies/" + shows.id}>
+      <Link href={"/people"}>
         <div class="bg-red-tone-2 p-4 rounded-md text-grayish shadow-md">
           <img
-            src={IMAGE_BASE_URL + shows.poster_path}
+            src={IMAGE_BASE_URL + shows.profile_path}
             alt="Movie Poster"
             class="w-full h-84 object-cover mb-4 rounded"
           />

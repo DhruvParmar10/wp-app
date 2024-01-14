@@ -13,8 +13,8 @@ export default function Navbar() {
             <Link href={"/"} className="text-white">
               Home
             </Link>
-            <Link href={"/Contacts"} className="text-white">
-              Contacts
+            <Link href={"/people"} className="text-white">
+              People
             </Link>
             <Link href={"/Trending"} className="text-white">
               Trending
