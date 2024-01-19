@@ -51,6 +51,12 @@ export const getSimilarMovies = async (id) => {
   return data.results;
 };
 
+export const getSimilarTvShows = async (id) => {
+  const res = await fetch(`${BASE_URL}/tv/${id}/similar?api_key=${API_KEY}`);
+  const data = await res.json();
+  return data.results;
+};
+
 export const getPeople = async () => {
   const res = await fetch(
     `${BASE_URL}/trending/person/day?language=en_US&api_key=${API_KEY}`
