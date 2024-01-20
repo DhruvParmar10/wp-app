@@ -5,7 +5,7 @@ export default function signin() {
     <div className="bg-gray-900 h-screen flex items-center justify-center">
       <div className="bg-red-tone-1 text-white p-8 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Sign In to IMDb
+          Sign In to CineRave
         </h2>
         <form>
           <div className="mb-4">

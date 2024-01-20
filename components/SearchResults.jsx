@@ -34,16 +34,16 @@ export default function SearchResults({ search, movie }) {
 
   return (
     <>
-      <div>
-        <div className="flex">
-          <h1 className="text-3xl">
+      <div className="text-white">
+        <div className="flex m-3">
+          <h1 className="text-2xl">
             Search Results for <b>{search}</b>
           </h1>
         </div>
         <div className="p-4">
-          <label className="block mb-2 font-medium text-white">
+          {/* <label className="block mb-2 font-medium text-white">
             Select an option
-          </label>
+          </label> */}
           <select
             onChange={(e) => filterMovies(e.target.value)}
             id="movies"
@@ -58,9 +58,15 @@ export default function SearchResults({ search, movie }) {
           </select>
         </div>
       </div>
-      {filteredMovies.map((movie) => {
-        return <Card key={movie.id} movie={movie} />;
-      })}
+      <div className="flex">
+        <section className="container mx-auto my-8">
+          <div className="text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {filteredMovies.map((movie) => {
+              return <Card key={movie.id} movie={movie} />;
+            })}
+          </div>
+        </section>
+      </div>
     </>
   );
 }
