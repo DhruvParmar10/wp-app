@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
 import { getMoviesDetails, getSimilarMovies } from "@/utils/request";
+import Image from "next/image";
 import { Suspense } from "react";
 
 export default async function moviesDetailPage({ params }) {
@@ -11,7 +12,7 @@ export default async function moviesDetailPage({ params }) {
       <div className="my-4 mx-3 text-white">
         <div className="flex items-center">
           <div className=" col-3">
-            <img
+            <Image
               src={IMAGE_BASE_URL + movieDetails.backdrop_path}
               alt="backdrop_image"
             />

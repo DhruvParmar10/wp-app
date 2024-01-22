@@ -1,5 +1,6 @@
 import { getSimilarTvShows, getTvShowsDetails } from "@/utils/request";
 import TvCard from "@/components/tvCard";
+import Image from "next/image";
 
 export default async function moviesDetailPage({ params }) {
   const tvshowsDetails = await getTvShowsDetails(params.id);
@@ -10,7 +11,7 @@ export default async function moviesDetailPage({ params }) {
       <div className="my-4 mx-3 text-white">
         <div className="flex items-center">
           <div className=" col-3">
-            <img
+            <Image
               src={IMAGE_BASE_URL + tvshowsDetails.backdrop_path}
               alt="backdrop_image"
             />
