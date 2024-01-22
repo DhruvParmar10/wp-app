@@ -7,7 +7,7 @@ export default function Card({ movie }) {
     <>
       <Link href={"/movies/" + movie.id}>
         <div className="bg-red-tone-2 p-4 rounded-md text-grayish shadow-md">
-          <Image
+          <img
             src={IMAGE_BASE_URL + movie.poster_path}
             alt="Movie Poster"
             className="w-full h-84 object-cover mb-4 rounded"

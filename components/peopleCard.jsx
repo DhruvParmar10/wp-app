@@ -7,7 +7,7 @@ export default function PeopleCard({ shows }) {
     <>
       <Link href={"/people"}>
         <div className="bg-red-tone-2 p-4 rounded-md text-grayish shadow-md">
-          <Image
+          <img
             src={IMAGE_BASE_URL + shows.profile_path}
             alt="Profile_Pic"
             className="w-full h-84 object-cover mb-4 rounded"

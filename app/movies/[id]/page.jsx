@@ -12,7 +12,7 @@ export default async function moviesDetailPage({ params }) {
       <div className="my-4 mx-3 text-white">
         <div className="flex items-center">
           <div className=" col-3">
-            <Image
+            <img
               src={IMAGE_BASE_URL + movieDetails.backdrop_path}
               alt="backdrop_image"
             />
