@@ -7,11 +7,15 @@ export default function TvCard({ shows }) {
     <>
       <Link href={"/tvshows/" + shows.id}>
         <div className="bg-red-tone-2 p-4 rounded-md text-grayish shadow-md">
-          <img
-            src={IMAGE_BASE_URL + shows.poster_path}
-            alt="Profile_Pic"
-            className="w-full h-84 object-cover mb-4 rounded"
-          />
+          {shows.poster_path && (
+            <Image
+              width={120}
+              height={60}
+              src={IMAGE_BASE_URL + shows.poster_path}
+              alt="Profile_Pic"
+              className="w-full h-84 object-cover mb-4 rounded"
+            />
+          )}
           <h2 className="text-xl text-white font-extrabold mb-2">
             {shows.name}
           </h2>
