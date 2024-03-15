@@ -9,6 +9,14 @@ export const getTrendingMovies = async () => {
   return data.results;
 };
 
+export const getTrendingTvShows = async () => {
+  const res = await fetch(
+    `${BASE_URL}/trending/tv/day?language=en-US&api_key=${API_KEY}`
+  );
+  const data = await res.json();
+  return data.results;
+};
+
 export const getPopularMovies = async () => {
   const res = await fetch(
     `${BASE_URL}/movie/popular?language=en-US&api_key=${API_KEY}`
